@@ -1,0 +1,23 @@
+
+<%= link_to 'Add User', new_user_path %> <br>
+<br>
+
+<% @users.each do |u| %>
+
+      <%= u.name %>
+      <%= u.surname %>
+      <%= link_to 'Edit', edit_user_path(u) %>
+      <%= link_to 'Destroy', user_path(u),
+                method: :delete, data: { confirm: 'Are you sure?' } %><br>
+
+<% end %>
+
+<br>
+
+<%= link_to 'Back to Home', root_path %>
+
+
+
+
+
+
