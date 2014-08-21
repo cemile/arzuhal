@@ -4,11 +4,10 @@
 
 <% @users.each do |u| %>
 
-      <%= u.name %>
-      <%= u.surname %>
-      <%= link_to 'Edit', edit_user_path(u) %>
-      <%= link_to 'Destroy', user_path(u),
-                method: :delete, data: { confirm: 'Are you sure?' } %><br>
+    <%= link_to "#{u.name} #{u.surname}", user_path(u)   %>
+     <strong><%= link_to 'Edit', edit_user_path(u) %></strong>
+    <strong><%= link_to 'Destroy', user_path(u),
+                        method: :delete, data: { confirm: 'Are you sure?' } %></strong>  <br>
 
 <% end %>
 
