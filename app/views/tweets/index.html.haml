@@ -1,4 +1,6 @@
+
 - @tweets.each  do |t|
+
   = link_to "#{t.user.name} #{t.user.surname}", user_path(t.user)
   %br/
   = t.text

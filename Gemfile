@@ -35,6 +35,20 @@ gem 'compass-rails'
 #bootstrap-sass
 gem 'bootstrap-sass', '~> 3.2.0.1'
 
+#will-paginate
+gem 'will-paginate-i18n', '~> 0.1.15'
+
+#will-paginate-bootstrap
+gem 'will_paginate-bootstrap', '~> 1.0.1'
+
+#responder
+gem 'responder', '~> 0.2.4'
+
+#simple-form
+gem 'simple-form-builder', '~> 0.0.8.rails3'
+
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
