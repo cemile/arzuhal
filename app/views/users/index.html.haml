@@ -1,11 +1,12 @@
-= link_to 'Add User', new_user_path
+= link_to 'Add User', new_user_path,class: 'btn btn-sm btn-default'
 %br/
 %br/
-- @users.each do |u|
-  = link_to "#{u.name} #{u.surname}", user_path(u)
-  %strong= link_to 'Edit', edit_user_path(u)
-  %strong= link_to 'Destroy', user_path(u),                    |
-      method: :delete, data: { confirm: 'Are you sure?' } |
-  %br/
-%br/
-= link_to 'Back to Home', root_path
+%table.table
+  - @users.each do |u|
+    %tr
+      %td="#{u.name} #{u.surname}"
+      %td= link_to 'Show',user_path(u), class: 'btn btn-sm btn-default'
+      %td= link_to 'Edit', edit_user_path(u), class: 'btn btn-sm btn-default'
+      %td= link_to 'Destroy', user_path(u),                    |
+          method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' |
+= link_to 'Back to Home', root_path, class: 'btn btn-sm btn-default'
