@@ -1,0 +1,29 @@
+%h1 Users Details
+%p
+  %strong
+    = @user.name
+    = @user.surname
+  = link_to 'Destroy', user_path(@user),  method: :delete, data: { confirm: 'Are you sure?' }
+%p
+  = @user.email
+%p
+  = @user.bio
+%h1 Add new tweet this user
+%p
+  = form_for([@user, @tweet]) do |f|
+    %p
+      = f.label :text
+      %br/
+      = f.text_area :text
+    %p
+      = f.submit
+%h1 User Tweets
+- @user.tweets.each do |tweet|
+  %p
+    = tweet.created_at
+    %br/
+    %strong= tweet.text
+  = link_to 'Destroy Tweet', [tweet.user, tweet], |
+    method: :delete,                              |
+    data: { confirm: 'Are you sure?' }            |
+= link_to 'Back to Home', users_path
